@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
-  <body>
+  <body onload="start()">
     <div class="container">
       <div class="row">
         <div class="text-center head-bd col-md-6">
@@ -20,30 +20,80 @@
         </div>
       </div>
       <div class="row">
-        <div class="text-center img-bd col-md-6">
-          <p>あなたのお名前（なまえ):</p>
-          <p>×××× ××××</p>
+        <div class="img-bd col-md-6">
+          <form data-persist="garlic">
+            <p>
+              <label
+                >あなたのお名前（なまえ):<br /><input
+                  type="text"
+                  name="name"
+                  id="m_name"
+              /></label>
+            </p>
+          </form>
         </div>
-        <div class="text-center img-bd col-md-6">
-          <p>生年月日（せいねんがっぴ):</p>
-          <p>××年××月××日(××才)</p>
+        <div class="img-bd col-md-6">
+                <form data-persist="garlic">
+                    <label
+                >生年月日（せいねんがっぴ):<br /><input
+                  type="date"
+                  name="birth"
+                  id="m_birth"
+                />(
+                </form>
+                <input type="text" name="age" id="m_age" size="2" /> 才)</label
+              >
         </div>
       </div>
       <div class="row">
-        <div class="text-center img-bd col-md-6">
-          <p>住所（じゅうしょ):</p>
-          <p>×××× ××××</p>
+        <div class="img-bd col-md-6">
+          <form data-persist="garlic">
+            <p>
+              <label
+                >住所（じゅうしょ):<br /><input
+                  type="text"
+                  name="adr"
+                  id="m_adr"
+                  size="40"
+              /></label>
+            </p>
+          </form>
         </div>
-        <div class="text-center img-bd col-md-6">
+        <div class="img-bd col-md-6">
           <p>血液型（けつえきがた):</p>
-          <p>Ａ、Ｂ、Ｏ、ＡＢ、(Ｒｈ＋、－)</p>
+          <form data-persist="garlic">
+            <p>
+              <input type="radio" name="bldtype" value="a" />A型
+              <input type="radio" name="bldtype" value="b" />B型
+              <input type="radio" name="bldtype" value="O" />O型
+              <input type="radio" name="bldtype" value="ab" />AB型&nbsp;(&nbsp;
+              <input type="radio" name="rhtype" value="1" />Rh+&nbsp;/&nbsp;
+              <input type="radio" name="rhtype" value="2" />Rh-&nbsp;)&nbsp;
+            </p>
+          </form>
         </div>
       </div>
       <div class="row">
-        <div class="text-center img-bd col-md-12">
-          <p>家族の連絡先（れんらくさき):</p>
-          <p>名前（なまえ）:×××× ××××</p>
-          <p>連絡先（れんらくさき):××××××××××××××××××××</p>
+        <div class="img-bd col-md-12">
+          <form data-persist="garlic">
+            <p>
+              <label
+                >家族の連絡先（れんらくさき)&nbsp;:&nbsp;<input
+                  type="text"
+                  name="conn"
+                  id="m_conn"
+                  size="40"
+              /></label>
+            </p>
+            <p>
+              <label
+                >家族の名前（かぞくのなまえ）&nbsp;:&nbsp;<input
+                  type="text"
+                  name="conn_name"
+                  id="m_conn_name"
+              /></label>
+            </p>
+          </form>
         </div>
       </div>
       <div class="row">
@@ -150,5 +200,36 @@
     <script src="./js/jquery.min.js"></script>
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/garlic.min.js"></script>
+
+    <script>
+      function getAge(birthday) {
+        var today = new Date();
+        var tdate1 =
+          today.getFullYear() * 10000 +
+          (today.getMonth() + 1) * 100 +
+          today.getDate();
+        var tdate2 =
+        birthday.getFullYear() * 10000 +
+            (birthday.getMonth() + 1) * 100 +
+            birthday.getDate();
+        return Math.floor((tdate1 - tdate2) / 10000);
+      }
+
+      $("#m_birth").on({
+        input: function(e) {
+          var w_birth = new Date($("#m_birth").val());
+          var w_age = getAge(w_birth);
+          $("#m_age").val(w_age);
+        }
+      });
+    </script>
+    <script>
+      function start() {
+        var w_birth = new Date($("#m_birth").val());
+          var w_age = getAge(w_birth);
+          $("#m_age").val(w_age);
+      }
+    </script>
   </body>
 </html>

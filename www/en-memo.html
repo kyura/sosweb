@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
-  <body>
+  <body onload="start()">
     <div class="container">
       <div class="row">
         <div class="text-center head-bd col-md-6">
@@ -21,30 +21,61 @@
         </div>
       </div>
       <div class="row">
-        <div class="text-center img-bd col-md-6">
+        <div class="img-bd col-md-6">
           <img src="./images/en401.jpg" alt="" />
-          <p>×××× ××××</p>
+          <form data-persist="garlic">
+            <input type="text" name="name" id="m_name" />
+          </form>
         </div>
-        <div class="text-center img-bd col-md-6">
+        <div class="img-bd col-md-6">
           <img src="./images/en402.jpg" alt="" />
-          <p>Year(XX) Month(XX) Day(XX),(XX)Years old</p>
+          <form data-persist="garlic">
+            <input type="date" name="birth" id="m_birth" />
+          </form>
+          (<input type="text" name="age" id="m_age" size="2" /> 才)
         </div>
       </div>
+
       <div class="row">
-        <div class="text-center img-bd col-md-6">
+        <div class="img-bd col-md-6">
           <img src="./images/en403.jpg" alt="" />
-          <p>×××× ××××</p>
+          <form data-persist="garlic">
+            <p>
+              <input type="text" name="adr" id="m_adr" size="40" />
+            </p>
+          </form>
         </div>
-        <div class="text-center img-bd col-md-6">
+        <div class="img-bd col-md-6">
           <img src="./images/en404.jpg" alt="" />
-          <p>Ａ、Ｂ、Ｏ、ＡＢ、(Ｒｈ＋、－)</p>
+          <form data-persist="garlic">
+            <p>
+              <input type="radio" name="bldtype" value="a" />A
+              <input type="radio" name="bldtype" value="b" />B
+              <input type="radio" name="bldtype" value="O" />O
+              <input type="radio" name="bldtype" value="ab" />AB&nbsp;(&nbsp;
+              <input type="radio" name="rhtype" value="1" />Rh+&nbsp;/&nbsp;
+              <input type="radio" name="rhtype" value="2" />Rh-&nbsp;)&nbsp;
+            </p>
+          </form>
         </div>
       </div>
       <div class="row">
-        <div class="text-center img-bd col-md-12">
+        <div class="img-bd col-md-12">
           <img src="./images/en405.jpg" alt="" />
-          <p>Name:×××× ××××</p>
-          <p>Contact Information:××××××××××××××××××××</p>
+          <form data-persist="garlic">
+            <p>
+              <label
+                >Contact Information&nbsp;:&nbsp;<input
+                  type="text"
+                  name="conn_name"
+                  id="m_conn_name"
+                  size="40"/></label
+              ><br />
+              <label
+                >Name&nbsp;:&nbsp;<input type="text" name="conn" id="m_conn"
+              /></label>
+            </p>
+          </form>
         </div>
       </div>
       <div class="row">
@@ -109,5 +140,36 @@
     <script src="./js/jquery.min.js"></script>
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/garlic.min.js"></script>
+
+    <script>
+      function getAge(birthday) {
+        var today = new Date();
+        var tdate1 =
+          today.getFullYear() * 10000 +
+          (today.getMonth() + 1) * 100 +
+          today.getDate();
+        var tdate2 =
+          birthday.getFullYear() * 10000 +
+          (birthday.getMonth() + 1) * 100 +
+          birthday.getDate();
+        return Math.floor((tdate1 - tdate2) / 10000);
+      }
+
+      $("#m_birth").on({
+        input: function(e) {
+          var w_birth = new Date($("#m_birth").val());
+          var w_age = getAge(w_birth);
+          $("#m_age").val(w_age);
+        }
+      });
+    </script>
+    <script>
+      function start() {
+        var w_birth = new Date($("#m_birth").val());
+        var w_age = getAge(w_birth);
+        $("#m_age").val(w_age);
+      }
+    </script>
   </body>
 </html>
