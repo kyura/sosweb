@@ -11,3 +11,8 @@
   border: 1px solid lightgray;
   background: peachpuff;
 }
+
+#gmap {
+  width: 100%;
+  height: auto;
+}

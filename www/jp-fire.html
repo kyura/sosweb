@@ -10,36 +10,54 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="text-center head-bd col-md-6">
-          <a href="./index.html"><h4>SOSハンドブックへ戻る</h4></a>
-        </div>
-        <div class="text-center head-bd col-md-6">
-          <a href="./jp-menu.html"><h4>ひとつ前に戻る</h4></a>
-        </div>
+    <nav class="navbar sticky-top navbar-expand navbar-dark bg-dark mt-3 mb-3">
+      <a class="navbar-brand" href="./index.html">SOS ハンドブック</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="./jp-menu.html">ひとつ前に戻る</a>
+          </li>
+        </ul>
       </div>
+    </nav>
+
+    <div class="container">
       <div class="row">
         <div class="text-center head-bd2 col-md-12">
           <h4>燃えているものは？</h4>
         </div>
       </div>
       <div class="row">
-        <div class="text-center img-bd col-md-4">
+        <div class="text-center img-bd col-md-12">
+          <img
+            src="./images/jp-fire-0.jpg"
+            usemap="#ImageMap1"
+            class="img-fluid"
+            alt=""
+          />
+          <map name="ImageMap1">
+            <area shape="rect" coords="23,8,261,251" href="#11" alt="" />
+            <area shape="rect" coords="303,9,553,253" href="#12" alt="" />
+            <area shape="rect" coords="603,12,830,252" href="#13" alt="" />
+          </map>
+        </div>
+      </div>
+      <div class="row">
+        <div id="11" class="text-center img-bd col-md-4">
           <img src="./images/sc_300_kaji_1.png" class="img-fluid" alt="" />
           <hr />
           <div class="text-center">
             <h4>建物</h4>
           </div>
         </div>
-        <div class="text-center img-bd col-md-4">
+        <div id="12" class="text-center img-bd col-md-4">
           <img src="./images/sc_300_kaji_2.png" class="img-fluid" alt="" />
           <hr />
           <div class="text-center">
             <h4>車</h4>
           </div>
         </div>
-        <div class="text-center img-bd col-md-4">
+        <div id="13" class="text-center img-bd col-md-4">
           <img src="./images/sc_300_kaji_3.png" class="img-fluid" alt="" />
           <hr />
           <div class="text-center">
@@ -53,21 +71,36 @@
         </div>
       </div>
       <div class="row">
-        <div class="text-center img-bd col-md-4">
+        <div class="text-center img-bd col-md-12">
+          <img
+            src="./images/jp-fire-1.jpg"
+            usemap="#ImageMap2"
+            class="img-fluid"
+            alt=""
+          />
+          <map name="ImageMap2">
+            <area shape="rect" coords="21,3,202,259" href="#21" alt="" />
+            <area shape="rect" coords="270,15,462,278" href="#22" alt="" />
+            <area shape="rect" coords="525,21,713,293" href="#23" alt="" />
+          </map>
+        </div>
+      </div>
+      <div class="row">
+        <div id="21" class="text-center img-bd col-md-4">
           <img src="./images/sc_310_kaji_1.png" class="img-fluid" alt="" />
           <hr />
           <div class="text-center">
             <h4>すぐ近く</h4>
           </div>
         </div>
-        <div class="text-center img-bd col-md-4">
+        <div id="22" class="text-center img-bd col-md-4">
           <img src="./images/sc_310_kaji_2.png" class="img-fluid" alt="" />
           <hr />
           <div class="text-center">
             <h4>おなじ建物</h4>
           </div>
         </div>
-        <div class="text-center img-bd col-md-4">
+        <div id="23" class="text-center img-bd col-md-4">
           <img src="./images/sc_310_kaji_3.png" class="img-fluid" alt="" />
           <hr />
           <div class="text-center">
@@ -78,6 +111,13 @@
     </div>
 
     <script src="./js/jquery.min.js"></script>
+    <script src="./js/jquery.rwdImageMaps.min.js"></script>
+    <script>
+      $(document).ready(function(e) {
+        $("img[usemap]").rwdImageMaps();
+      });
+    </script>
+
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
   </body>
