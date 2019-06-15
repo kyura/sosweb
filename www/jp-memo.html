@@ -20,13 +20,31 @@
         </ul>
       </div>
     </nav>
-    <div class="container">
+    <div class="container form-group">
       <div class="row">
-        <div class="img-bd col-md-6">
+        <div class="col-md-12">
+          <form data-persist="garlic">
+            <p>
+              <label
+                >メモ:<br />
+                <textarea
+                  class="form-control"
+                  name="memo"
+                  id="m_memo"
+                  rows="5"
+                ></textarea>
+              </label>
+            </p>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
           <form data-persist="garlic">
             <p>
               <label
                 >あなたのお名前（なまえ):<br /><input
+                  class="form-control"
                   type="text"
                   name="name"
                   id="m_name"
@@ -34,10 +52,11 @@
             </p>
           </form>
         </div>
-        <div class="img-bd col-md-6">
+        <div class="col-md-6">
           <form data-persist="garlic">
             <label
               >生年月日（せいねんがっぴ):<br /><input
+                class="form-control"
                 type="date"
                 name="birth"
                 id="m_birth"
@@ -49,38 +68,40 @@
         </div>
       </div>
       <div class="row">
-        <div class="img-bd col-md-6">
+        <div class="col-md-6">
           <form data-persist="garlic">
             <p>
               <label
-                >住所（じゅうしょ):<br /><input
-                  type="text"
+                >住所（じゅうしょ):<br />
+                <textarea
+                  class="form-control"
                   name="adr"
                   id="m_adr"
-              /></label>
+                  rows="3"
+                ></textarea>
+              </label>
             </p>
           </form>
         </div>
-        <div class="img-bd col-md-6">
-          <p>血液型（けつえきがた):</p>
+        <div class="col-md-6">
+          血液型（けつえきがた):
           <form data-persist="garlic">
-            <p>
-              <input type="radio" name="bldtype" value="a" />A型
-              <input type="radio" name="bldtype" value="b" />B型
-              <input type="radio" name="bldtype" value="O" />O型
-              <input type="radio" name="bldtype" value="ab" />AB型&nbsp;(&nbsp;
-              <input type="radio" name="rhtype" value="1" />Rh+&nbsp;/&nbsp;
-              <input type="radio" name="rhtype" value="2" />Rh-&nbsp;)&nbsp;
-            </p>
+            <input type="radio" name="bldtype" value="a" />A型
+            <input type="radio" name="bldtype" value="b" />B型
+            <input type="radio" name="bldtype" value="O" />O型
+            <input type="radio" name="bldtype" value="ab" />AB型&nbsp;(&nbsp;
+            <input type="radio" name="rhtype" value="1" />Rh+&nbsp;/&nbsp;
+            <input type="radio" name="rhtype" value="2" />Rh-&nbsp;)&nbsp;
           </form>
         </div>
       </div>
       <div class="row">
-        <div class="img-bd col-md-12">
+        <div class="col-md-12">
           <form data-persist="garlic">
             <p>
               <label
                 >家族の連絡先（れんらくさき)&nbsp;:&nbsp;<input
+                  class="form-control"
                   type="text"
                   name="conn"
                   id="m_conn"
@@ -89,6 +110,7 @@
             <p>
               <label
                 >家族の名前（かぞくのなまえ）&nbsp;:&nbsp;<input
+                  class="form-control"
                   type="text"
                   name="conn_name"
                   id="m_conn_name"

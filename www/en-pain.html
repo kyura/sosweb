@@ -6,7 +6,6 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
@@ -16,7 +15,7 @@
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="navbar-brand" href="./en-menu.html">[Back]</a>
+            <a class="nav-link" href="./en-menu.html">[Back]</a>
           </li>
         </ul>
       </div>
@@ -24,47 +23,77 @@
     <div class="container">
       <div class="row">
         <div class="img-bd col-md-6">
-          <img src="./images/en201.jpg" class="img-fluid" alt="" />
+          <img
+            src="./images/en201.jpg"
+            class="img-fluid"
+            usemap="#ImageMap1"
+            alt=""
+          />
+          <map name="ImageMap1">
+            <area shape="circle" coords="258,86,79" href="#02" alt="" />
+            <area shape="circle" coords="92,131,75" href="#03" alt="" />
+            <area shape="circle" coords="438,115,69" href="#03" alt="" />
+            <area shape="rect" coords="177,169,358,266" href="#04" alt="" />
+            <area shape="rect" coords="178,279,360,369" href="#05" alt="" />
+            <area shape="rect" coords="129,429,236,650" href="#08" alt="" />
+            <area shape="rect" coords="271,425,389,654" href="#08" alt="" />
+            <area shape="circle" coords="932,90,81" href="#01" alt="" />
+            <area shape="circle" coords="742,102,65" href="#03" alt="" />
+            <area shape="circle" coords="1114,107,68" href="#03" alt="" />
+            <area shape="rect" coords="847,178,1013,292" href="#06" alt="" />
+            <area shape="rect" coords="848,305,1016,412" href="#07" alt="" />
+            <area shape="rect" coords="828,461,914,658" href="#08" alt="" />
+            <area shape="rect" coords="941,459,1052,653" href="#08" alt="" />
+          </map>
         </div>
         <div class="img-bd col-md-6">
-          <img src="./images/en202.jpg" class="img-fluid" alt="" />
-        </div>
-      </div>
-      <div class="row">
-        <div class="text-center col-md-12">
-          <img src="./images/en210.jpg" class="img-fluid" alt="" />
+          <img
+            src="./images/en202.jpg"
+            class="img-fluid"
+            usemap="#ImageMap2"
+            alt=""
+          />
+          <map name="ImageMap2">
+            <area shape="circle" coords="273,91,79" href="#02" alt="" />
+            <area shape="circle" coords="81,94,54" href="#03" alt="" />
+            <area shape="circle" coords="479,95,60" href="#03" alt="" />
+            <area shape="circle" coords="274,220,55" href="#04" alt="" />
+            <area shape="circle" coords="276,328,55" href="#05" alt="" />
+            <area shape="rect" coords="162,425,261,656" href="#08" alt="" />
+            <area shape="rect" coords="287,424,394,656" href="#08" alt="" />
+          </map>
         </div>
       </div>
       <div class="row">
         <div class="align-self-center text-center col-md-6">
-          <img src="./images/en211.jpg" class="img-fluid" alt="" />
+          <img src="./images/en210.jpg" class="img-fluid" alt="" />
         </div>
-        <div class="text-center img-bd col-md-3">
+        <div id="01" class="text-center img-bd col-md-3">
           <img src="./images/en221.jpg" class="img-fluid" alt="" />
         </div>
-        <div class="text-center img-bd col-md-3">
+        <div id="02" class="text-center img-bd col-md-3">
           <img src="./images/en222.jpg" class="img-fluid" alt="" />
         </div>
       </div>
       <div class="row">
-        <div class="text-center img-bd col-md-3">
+        <div id="03" class="text-center img-bd col-md-3">
           <img src="./images/en223.jpg" class="img-fluid" alt="" />
         </div>
-        <div class="text-center img-bd col-md-3">
+        <div id="04" class="text-center img-bd col-md-3">
           <img src="./images/en224.jpg" class="img-fluid" alt="" />
         </div>
-        <div class="text-center img-bd col-md-3">
+        <div id="05" class="text-center img-bd col-md-3">
           <img src="./images/en225.jpg" class="img-fluid" alt="" />
         </div>
-        <div class="text-center img-bd col-md-3">
+        <div id="06" class="text-center img-bd col-md-3">
           <img src="./images/en226.jpg" class="img-fluid" alt="" />
         </div>
       </div>
       <div class="row">
-        <div class="text-center img-bd col-md-3">
+        <div id="07" class="text-center img-bd col-md-3">
           <img src="./images/en227.jpg" class="img-fluid" alt="" />
         </div>
-        <div class="text-center img-bd col-md-3">
+        <div id="08" class="text-center img-bd col-md-3">
           <img src="./images/en228.jpg" class="img-fluid" alt="" />
         </div>
         <div class="align-self-center text-center col-md-6">
@@ -74,6 +103,13 @@
     </div>
 
     <script src="./js/jquery.min.js"></script>
+    <script src="./js/jquery.rwdImageMaps.min.js"></script>
+    <script>
+      $(document).ready(function(e) {
+        $("img[usemap]").rwdImageMaps();
+      });
+    </script>
+
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
   </body>

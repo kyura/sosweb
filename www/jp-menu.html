@@ -8,6 +8,12 @@
     />
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
     <link rel="stylesheet" href="./css/style.css" />
+    <style>
+      body {
+        // navbar-fixed-top 対応
+        padding-top: 80px;
+      }
+    </style>
   </head>
   <body>
     <nav class="navbar sticky-top navbar-expand navbar-dark bg-dark mt-3 mb-3">
@@ -30,15 +36,35 @@
             alt=""
           />
           <map name="ImageMap">
-            <area shape="rect" coords="12,12,239,122" href="#01" alt="" />
-            <area shape="rect" coords="249,11,481,124" href="#02" alt="" />
-            <area shape="rect" coords="489,11,718,127" href="#03" alt="" />
-            <area shape="rect" coords="12,136,241,252" href="#04" alt="" />
-            <area shape="rect" coords="249,136,480,252" href="#05" alt="" />
-            <area shape="rect" coords="489,135,719,252" href="#06" alt="" />
-            <area shape="rect" coords="11,262,241,377" href="#07" alt="" />
-            <area shape="rect" coords="250,262,480,376" href="#08" alt="" />
-            <area shape="rect" coords="490,262,718,377" href="#09" alt="" />
+            <area shape="rect" coords="12,12,239,122" href="" alt="" />
+            <area
+              shape="rect"
+              coords="249,11,481,124"
+              href="./jp-map.html"
+              alt=""
+            />
+            <area shape="rect" coords="489,11,718,127" href="" alt="" />
+            <area
+              shape="rect"
+              coords="12,136,241,252"
+              href="./jp-memo.html"
+              alt=""
+            />
+            <area shape="rect" coords="249,136,480,252" href="" alt="" />
+            <area shape="rect" coords="489,135,719,252" href="" alt="" />
+            <area shape="rect" coords="11,262,241,377" href="" alt="" />
+            <area
+              shape="rect"
+              coords="250,262,480,376"
+              href="./jp-pain.html"
+              alt=""
+            />
+            <area
+              shape="rect"
+              coords="490,262,718,377"
+              href="./jp-fire.html"
+              alt=""
+            />
             <area
               shape="rect"
               coords="57,387,671,491"
@@ -109,7 +135,6 @@
         $("img[usemap]").rwdImageMaps();
       });
     </script>
-
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
   </body>

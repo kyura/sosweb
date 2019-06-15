@@ -21,83 +21,61 @@
         </ul>
       </div>
     </nav>
-    <div class="container form-group">
+    <div class="container">
       <div class="row">
-        <div class="col-md-12">
-          <img src="./images/en406.jpg" class="img-fluid" alt="" />
+        <div class="img-bd col-md-6">
+          <img src="./images/en401.jpg" alt="" />
           <form data-persist="garlic">
-            <textarea
-              class="form-control"
-              name="memo"
-              id="m_memo"
-              rows="5"
-            ></textarea>
+            <input type="text" name="name" id="m_name" />
+          </form>
+        </div>
+        <div class="img-bd col-md-6">
+          <img src="./images/en402.jpg" alt="" />
+          <form data-persist="garlic">
+            <input type="date" name="birth" id="m_birth" value="2000-01-01" />
+          </form>
+          (<input type="text" name="age" id="m_age" size="2" /> 才)
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="img-bd col-md-6">
+          <img src="./images/en403.jpg" alt="" />
+          <form data-persist="garlic">
+            <p>
+              <input type="text" name="adr" id="m_adr" />
+            </p>
+          </form>
+        </div>
+        <div class="img-bd col-md-6">
+          <img src="./images/en404.jpg" alt="" />
+          <form data-persist="garlic">
+            <p>
+              <input type="radio" name="bldtype" value="a" />A
+              <input type="radio" name="bldtype" value="b" />B
+              <input type="radio" name="bldtype" value="O" />O
+              <input type="radio" name="bldtype" value="ab" />AB&nbsp;(&nbsp;
+              <input type="radio" name="rhtype" value="1" />Rh+&nbsp;/&nbsp;
+              <input type="radio" name="rhtype" value="2" />Rh-&nbsp;)&nbsp;
+            </p>
           </form>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-6">
-          <br />
-          <img src="./images/en401.jpg" class="img-fluid" alt="" />
+        <div class="img-bd col-md-12">
+          <img src="./images/en405.jpg" alt="" />
           <form data-persist="garlic">
-            <input class="form-control" type="text" name="name" id="m_name" />
-          </form>
-        </div>
-        <div class="col-md-6">
-          <br />
-          <img src="./images/en402.jpg" class="img-fluid" alt="" />
-          <form data-persist="garlic">
-            <input
-              class="form-control"
-              type="date"
-              name="birth"
-              id="m_birth"
-              value="2000-01-01"
-            />age
-            <input type="text" name="age" id="m_age" size="2" />
-          </form>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <br />
-          <img src="./images/en403.jpg" class="img-fluid" alt="" />
-          <form data-persist="garlic">
-            <textarea
-              class="form-control"
-              name="adr"
-              id="m_adr"
-              rows="3"
-            ></textarea>
-          </form>
-        </div>
-        <div class="col-md-6">
-          <br />
-          <img src="./images/en404.jpg" class="img-fluid" alt="" />
-          <form data-persist="garlic">
-            <input type="radio" name="bldtype" value="a" />A
-            <input type="radio" name="bldtype" value="b" />B
-            <input type="radio" name="bldtype" value="O" />O
-            <input type="radio" name="bldtype" value="ab" />AB&nbsp;(&nbsp;
-            <input type="radio" name="rhtype" value="1" />Rh+&nbsp;/&nbsp;
-            <input type="radio" name="rhtype" value="2" />Rh-&nbsp;)&nbsp;
-          </form>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <br />
-          <img src="./images/en405.jpg" class="img-fluid" alt="" />
-          <form data-persist="garlic">
-            <input class="form-control" type="text" name="conn" id="m_conn" />
-            <br />
-            <input
-              class="form-control"
-              type="text"
-              name="conn_name"
-              id="m_conn_name"
-            />
-            <br />
+            <p>
+              <label
+                >Contact Information&nbsp;:&nbsp;<input
+                  type="text"
+                  name="conn_name"
+                  id="m_conn_name"/></label
+              ><br />
+              <label
+                >Name&nbsp;:&nbsp;<input type="text" name="conn" id="m_conn"
+              /></label>
+            </p>
           </form>
         </div>
       </div>
