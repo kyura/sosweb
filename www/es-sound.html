@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <audio id="sound-1" preload="auto">
+      <source src="sound/siren1.mp3" type="audio/mp3" />
+    </audio>
+    <nav class="navbar sticky-top navbar-expand navbar-dark bg-dark mt-3 mb-3">
+      <a class="navbar-brand" href="./index.html">back to menu</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="./es-menu.html">back</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="mx-auto">
+          <div id="btn01">
+            <img class="img-fluid blink" src="./images/es-sound.jpg" onclick="soundbell(1)" alt="サイレン" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/jquery.min.js"></script>
+    <script type="text/javascript">
+      2
+      $(function() {
+        3
+        setInterval(function() {
+          4
+          $('.blink').fadeOut(1200, function() {
+            $(this).fadeIn(200)
+          })
+          5
+        }, 1400)
+        6
+      })
+      7
+    </script>
+    <script>
+      function soundbell(n) {
+        // 割り当てるID名（引数のnを連結して指定）
+        var id = 'sound-' + n
+        // 初回の再生以外だったら音声ファイルの再生ポイントを先頭にしておく
+        if (typeof document.getElementById(id).currentTime != 'undefined') {
+          document.getElementById(id).currentTime = 0
+        }
+        // [ID:sound-file]の音声ファイルを再生[play()]する
+        document.getElementById(id).play()
+      }
+    </script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+  </body>
+</html>

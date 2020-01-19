@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+      a.anchor {
+        display: block;
+        padding-top: 70px;
+        margin-top: -70px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar sticky-top navbar-expand navbar-dark bg-dark mt-3 mb-3">
+      <a class="navbar-brand" href="./index.html">[Back to Top]</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="./fr-menu.html">[Back]</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="img-bd col-md-6">
+          <img src="./images/fr201.jpg" class="img-fluid" usemap="#ImageMap1" alt="" />
+          <map name="ImageMap1">
+            <area shape="circle" coords="269,199,76" href="#02" alt="" />
+            <area shape="circle" coords="944,199,71" href="#01" alt="" />
+            <area shape="circle" coords="68,219,56" href="#03" alt="" />
+            <area shape="circle" coords="465,207,60" href="#03" alt="" />
+            <area shape="circle" coords="744,211,64" href="#03" alt="" />
+            <area shape="circle" coords="1138,197,59" href="#03" alt="" />
+            <area shape="rect" coords="170,289,371,381" href="#04" alt="" />
+            <area shape="rect" coords="169,387,371,461" href="#05" alt="" />
+            <area shape="rect" coords="854,309,1036,444" href="#06" alt="" />
+            <area shape="rect" coords="856,448,1034,538" href="#07" alt="" />
+            <area shape="rect" coords="153,572,240,769" href="#08" alt="" />
+            <area shape="rect" coords="283,570,389,765" href="#08" alt="" />
+            <area shape="rect" coords="830,566,916,773" href="#08" alt="" />
+            <area shape="rect" coords="952,566,1064,777" href="#08" alt="" />
+          </map>
+        </div>
+        <div class="img-bd col-md-6">
+          <img src="./images/fr202.jpg" class="img-fluid" usemap="#ImageMap2" alt="" />
+          <map name="ImageMap2">
+            <area shape="circle" coords="264,202,82" href="#02" alt="" />
+            <area shape="rect" coords="3,164,139,292" href="#03" alt="" />
+            <area shape="rect" coords="395,147,514,287" href="#03" alt="" />
+            <area shape="rect" coords="177,284,355,377" href="#04" alt="" />
+            <area shape="rect" coords="179,381,355,483" href="#05" alt="" />
+            <area shape="rect" coords="153,552,382,782" href="#08" alt="" />
+          </map>
+        </div>
+      </div>
+      <div class="row">
+        <div class="align-self-center text-center col-md-6">
+          <img src="./images/fr210.jpg" class="img-fluid" alt="" />
+        </div>
+        <div class="text-center img-bd col-md-3">
+          <a id="01" class="anchor"></a>
+          <img src="./images/fr221.jpg" class="img-fluid" alt="" />
+        </div>
+        <div class="text-center img-bd col-md-3">
+          <a id="02" class="anchor"></a>
+          <img src="./images/fr222.jpg" class="img-fluid" alt="" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="text-center img-bd col-md-3">
+          <a id="03" class="anchor"></a>
+          <img src="./images/fr223.jpg" class="img-fluid" alt="" />
+        </div>
+        <div class="text-center img-bd col-md-3">
+          <a id="04" class="anchor"></a>
+          <img src="./images/fr224.jpg" class="img-fluid" alt="" />
+        </div>
+        <div class="text-center img-bd col-md-3">
+          <a id="05" class="anchor"></a>
+          <img src="./images/fr225.jpg" class="img-fluid" alt="" />
+        </div>
+        <div class="text-center img-bd col-md-3">
+          <a id="06" class="anchor"></a>
+          <img src="./images/fr226.jpg" class="img-fluid" alt="" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="text-center img-bd col-md-3">
+          <a id="07" class="anchor"></a>
+          <img src="./images/fr227.jpg" class="img-fluid" alt="" />
+        </div>
+        <div class="text-center img-bd col-md-3">
+          <a id="08" class="anchor"></a>
+          <img src="./images/fr228.jpg" class="img-fluid" alt="" />
+        </div>
+        <div class="align-self-center text-center col-md-6">
+          <img src="./images/fr212.jpg" class="img-fluid" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/jquery.rwdImageMaps.min.js"></script>
+    <script>
+      $(document).ready(function(e) {
+        $('img[usemap]').rwdImageMaps()
+      })
+    </script>
+
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+  </body>
+</html>
