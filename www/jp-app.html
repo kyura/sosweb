@@ -11,20 +11,23 @@
         padding-top: 70px;
         margin-top: -70px;
       }
+      .font-small {
+        font-size: 0.8rem;
+      }
     </style>
   </head>
-  <body>
+  <body onload="start()">
     <nav class="navbar sticky-top navbar-expand navbar-dark bg-dark mt-3 mb-3">
       <a class="navbar-brand" href="./index.html">SOS ハンドブック</a>
     </nav>
     <div class="container">
       <div class="row">
-        <h3>SOSハンドブック スマートフォン版 アプリケーション</h3>
+        <h5>SOSハンドブック スマートフォン版 アプリケーション</h5>
       </div>
       <div class="row">
-        <h4>ダウンロード使用許諾契約書</h4>
+        <h6>ダウンロード使用許諾契約書</h6>
       </div>
-      <div class="row">
+      <div class="row font-small">
         <ul>
           <li>
             SOSハンドブック スマートフォン版
@@ -32,8 +35,7 @@
           </li>
           <li>使用言語：日本語、英語、韓国語、中国語（簡体・繁体）、ポルトガル語、仏語、独語、西語、伊語、露語、その他。</li>
           <li>
-            ダウンロードして使用をご希望の方は、この「SOSハンドブック スマートフォン版 アプリケーション
-            ダウンロード使用許諾契約書」を必ずお読みください。
+            ダウンロードして使用をご希望の方は、この「SOSハンドブック スマートフォン版 アプリケーション ダウンロード使用許諾契約書」を必ずお読みください。
             本使用許諾契約に同意された方のみ本アプリケーションのダウンロードを行なうことができます。
           </li>
         </ul>
@@ -54,8 +56,7 @@
           ユーザーは、SOSスマホアプリを営利目的で自ら使用し、又は第三者に使用させてはならないものとします。<br />
           またAAJD又は第三者の著作権等の権利を侵害する行為を行ってはならないものとします。 <br /><br />
           第５条（SOSスマホアプリの権利）<br />
-          SOSスマホアプリに関する著作権等一切の権利は、AAJDに帰属するものとし、ユーザーはSOS
-          スマホアプリに関して本契約に基づき許諾された使用権以外の権利を有しないものとします。<br /><br />
+          SOSスマホアプリに関する著作権等一切の権利は、AAJDに帰属するものとし、ユーザーはSOS スマホアプリに関して本契約に基づき許諾された使用権以外の権利を有しないものとします。<br /><br />
           第６条（責任の範囲）<br />
           AAJDは、SOSスマホアプリに瑕疵（かし）、エラー、バグ等の不具合がないこと、又はSOSスマホアプリの使用がユーザー及び第三者に損害を与えないことを保証しません。なお、AAJDは、SOS
           スマホアプリのエラー、バグ等の不具合に対応するため、バージョンアップの提供方法につき自らの裁量により定める事が出来るものとします。またAAJDは、SOS
@@ -68,8 +69,7 @@
           ユーザーは、ユーザーがAAJD又はAAJDの指定する第三者のサーバーに接続した際、<br />
           (A)　SOSスマホアプリのセキュリティ機能の向上、エラーの修正、アップデート機能の向上等の目的でSOSスマホアプリが適宜自動的にアップデートされること、<br />
           (B)　当該SOSスマホアプリのアップデートに伴い、SOSスマホアプリの機能が追加、変更又は削除されることがあること、 及び<br />
-          (C)　アップデートされたSOSスマホアプリについても本SOS ハンドブック
-          アプリケーション使用許諾契約書の各条項が適用されることに同意するものとします。 <br /><br />
+          (C)　アップデートされたSOSスマホアプリについても本SOS ハンドブック アプリケーション使用許諾契約書の各条項が適用されることに同意するものとします。 <br /><br />
           第８条（契約の解約）<br />
           AAJDは、ユーザーが本契約に定める条項に違反した場合、直ちに本契約を解約することができるものとします。当該事由により本契約が終了した場合、ユーザーは契約の終了した日から
           2週間以内にSOSスマホアプリの全てを消去若しくは廃棄するか、又はAAJDに対して返還するものとします。<br />
@@ -83,7 +83,9 @@
       </div>
       <div class="row">
         <div class="mx-auto col-xs-4">
-          <a href="jp-menu.html"><button type="submit" class="btn btn-info">同意する</button></a>
+          <a href="jp-menu.html">
+            <button id="agreeBtn" type="submit" class="btn btn-info">同意する</button>
+          </a>
         </div>
         <div class="mx-auto col-xs-4">
           <a href="/"><button type="submit" class="btn btn-info">同意しない</button></a>
@@ -93,5 +95,19 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script>
+      function start() {
+        var agreeFlg = localStorage.getItem('jpAgreeFlg')
+        if (agreeFlg === '1') {
+          location.href = 'jp-menu.html'
+        }
+      }
+      $(function() {
+        $('#agreeBtn').on('click', function() {
+          localStorage.setItem('jpAgreeFlg', '1')
+          location.href = 'jp-menu.html'
+        })
+      })
+    </script>
   </body>
 </html>

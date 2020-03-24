@@ -2,20 +2,17 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body onload="start()">
     <nav class="navbar sticky-top navbar-expand navbar-dark bg-dark mt-3 mb-3">
-      <a class="navbar-brand" href="./index.html">SOS ハンドブック</a>
+      <a class="navbar-brand" href="./index.html"><img src="./images/iconHOME.png" class="img" height="36px" alt=""/></a>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="./jp-menu.html">ひとつ前に戻る</a>
+            <a class="nav-link" href="./jp-menu.html"><img src="./images/iconBACK.png" class="img" height="36px" alt=""/></a>
           </li>
         </ul>
       </div>
@@ -27,12 +24,7 @@
             <p>
               <label
                 >メモ:<br />
-                <textarea
-                  class="form-control"
-                  name="memo"
-                  id="m_memo"
-                  rows="5"
-                ></textarea>
+                <textarea class="form-control" name="memo" id="m_memo" rows="5"></textarea>
               </label>
             </p>
           </form>
@@ -42,26 +34,14 @@
         <div class="col-md-6">
           <form data-persist="garlic">
             <p>
-              <label
-                >あなたのお名前（なまえ):<br /><input
-                  class="form-control"
-                  type="text"
-                  name="name"
-                  id="m_name"
-              /></label>
+              <label>あなたのお名前（なまえ):<br /><input class="form-control" type="text" name="name" id="m_name"/></label>
             </p>
           </form>
         </div>
         <div class="col-md-6">
           <form data-persist="garlic">
             <label
-              >生年月日（せいねんがっぴ):<br /><input
-                class="form-control"
-                type="date"
-                name="birth"
-                id="m_birth"
-                value="2000-01-01"
-              />(
+              >生年月日（せいねんがっぴ):<br /><input class="form-control" type="date" name="birth" id="m_birth" value="2000-01-01" />(
               <input type="text" name="age" id="m_age" size="2" /> 才)</label
             >
           </form>
@@ -73,12 +53,7 @@
             <p>
               <label
                 >住所（じゅうしょ):<br />
-                <textarea
-                  class="form-control"
-                  name="adr"
-                  id="m_adr"
-                  rows="3"
-                ></textarea>
+                <textarea class="form-control" name="adr" id="m_adr" rows="3"></textarea>
               </label>
             </p>
           </form>
@@ -86,11 +61,8 @@
         <div class="col-md-6">
           血液型（けつえきがた):
           <form data-persist="garlic">
-            <input type="radio" name="bldtype" value="a" />A型
-            <input type="radio" name="bldtype" value="b" />B型
-            <input type="radio" name="bldtype" value="O" />O型
-            <input type="radio" name="bldtype" value="ab" />AB型&nbsp;(&nbsp;
-            <input type="radio" name="rhtype" value="1" />Rh+&nbsp;/&nbsp;
+            <input type="radio" name="bldtype" value="a" />A型 <input type="radio" name="bldtype" value="b" />B型 <input type="radio" name="bldtype" value="O" />O型
+            <input type="radio" name="bldtype" value="ab" />AB型&nbsp;(&nbsp; <input type="radio" name="rhtype" value="1" />Rh+&nbsp;/&nbsp;
             <input type="radio" name="rhtype" value="2" />Rh-&nbsp;)&nbsp;
           </form>
         </div>
@@ -99,22 +71,10 @@
         <div class="col-md-12">
           <form data-persist="garlic">
             <p>
-              <label
-                >家族の連絡先（れんらくさき)&nbsp;:&nbsp;<input
-                  class="form-control"
-                  type="text"
-                  name="conn"
-                  id="m_conn"
-              /></label>
+              <label>家族の連絡先（れんらくさき)&nbsp;:&nbsp;<input class="form-control" type="text" name="conn" id="m_conn"/></label>
             </p>
             <p>
-              <label
-                >家族の名前（かぞくのなまえ）&nbsp;:&nbsp;<input
-                  class="form-control"
-                  type="text"
-                  name="conn_name"
-                  id="m_conn_name"
-              /></label>
+              <label>家族の名前（かぞくのなまえ）&nbsp;:&nbsp;<input class="form-control" type="text" name="conn_name" id="m_conn_name"/></label>
             </p>
           </form>
         </div>
@@ -227,31 +187,25 @@
 
     <script>
       function getAge(birthday) {
-        var today = new Date();
-        var tdate1 =
-          today.getFullYear() * 10000 +
-          (today.getMonth() + 1) * 100 +
-          today.getDate();
-        var tdate2 =
-          birthday.getFullYear() * 10000 +
-          (birthday.getMonth() + 1) * 100 +
-          birthday.getDate();
-        return Math.floor((tdate1 - tdate2) / 10000);
+        var today = new Date()
+        var tdate1 = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate()
+        var tdate2 = birthday.getFullYear() * 10000 + (birthday.getMonth() + 1) * 100 + birthday.getDate()
+        return Math.floor((tdate1 - tdate2) / 10000)
       }
 
-      $("#m_birth").on({
+      $('#m_birth').on({
         input: function(e) {
-          var w_birth = new Date($("#m_birth").val());
-          var w_age = getAge(w_birth);
-          $("#m_age").val(w_age);
+          var w_birth = new Date($('#m_birth').val())
+          var w_age = getAge(w_birth)
+          $('#m_age').val(w_age)
         }
-      });
+      })
     </script>
     <script>
       function start() {
-        var w_birth = new Date($("#m_birth").val());
-        var w_age = getAge(w_birth);
-        $("#m_age").val(w_age);
+        var w_birth = new Date($('#m_birth').val())
+        var w_age = getAge(w_birth)
+        $('#m_age').val(w_age)
       }
     </script>
   </body>
